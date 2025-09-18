@@ -10,7 +10,9 @@ from sklearn.decomposition import PCA
 st.set_page_config(page_title="Morocco Zone Dashboard", layout="wide")
 
 # --- Load Data ---
-df = pd.read_excel("Data Morocco.xlsx")
+import os
+file_path = os.path.join(os.path.dirname(__file__), "Data Morocco.xlsx")
+df = pd.read_excel(file_path)
 df["DateTime"] = pd.to_datetime(df["DateTime"])
 
 # --- Sidebar Controls ---
